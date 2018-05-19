@@ -1,3 +1,6 @@
+import { RoomMessageComponent } from './../components/room-message/room-message';
+import { RoomMessagesComponent } from './../components/room-messages/room-messages';
+import { ComponentsModule } from './../components/components.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,20 +13,21 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { HtmlPage } from '../pages/html/html';
+import { JavascriptPage } from '../pages/javascript/javascript';
+import { CssPage } from '../pages/css/css';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FbProvider } from '../providers/fb/fb';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    HtmlPage,
+    JavascriptPage,
+    CssPage,
     TabsPage
   ],
   imports: [
@@ -33,20 +37,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFirestoreModule,
     // AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    HtmlPage,
+    JavascriptPage,
+    CssPage,
+    TabsPage,
+    RoomMessagesComponent,
+    RoomMessageComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FbProvider
   ]
 })
 export class AppModule {}

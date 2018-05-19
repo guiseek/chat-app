@@ -17,6 +17,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      if (window.localStorage.getItem('user')) {
+        this.rootPage = TabsPage;
+      } else {
+        this.rootPage = 'LoginPage';
+      }      
     });
   }
 }

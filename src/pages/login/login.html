@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Web Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form margin [formGroup]="user" novalidate (submit)="enter()">
+    <ion-list no-margin>
+      <ion-item no-padding>
+        <ion-label floating>Apelido</ion-label>
+        <ion-input type="text" formControlName="nickname" autofocus></ion-input>
+      </ion-item>
+    </ion-list>
+    <div no-margin padding-top>
+      <button ion-button block>
+        Entrar no chat
+      </button>
+    </div>
+  </form>
+</ion-content>

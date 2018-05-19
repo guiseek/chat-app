@@ -1,0 +1,10 @@
+<form [formGroup]="message" novalidate (submit)="sendMessage()">
+  <ion-toolbar>
+    <ion-input type="text" formControlName="text"></ion-input>
+    <ion-buttons end>
+      <button ion-button round icon-only color="primary" [disabled]="!isReadyToSend">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</form>

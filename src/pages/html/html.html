@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      HTML
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <room-messages [messages]="messages | async"></room-messages>
+</ion-content>
+<ion-footer>
+  <room-message [from]="user" (send)="send($event)"></room-message>
+</ion-footer>
