@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="viewCtrl.dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Adicionar código e/ou screenshot</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="upload" novalidate (submit)="save()">
+    <input type="file" #imageInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)"/>
+    <ion-item no-padding>
+      <ion-label floating>Adicionar código</ion-label>
+      <ion-textarea rows="10" formControlName="code"></ion-textarea>
+    </ion-item>
+    <ion-row no-padding>
+      <ion-col col-5>
+        <button type="button" ion-button block icon-left color="secondary" (click)="takePicture()">
+          <ion-icon name="image"></ion-icon>
+          Screenshot
+        </button>
+      </ion-col>
+      <ion-col col-7>
+        <button ion-button block>
+          Adicionar ao post
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

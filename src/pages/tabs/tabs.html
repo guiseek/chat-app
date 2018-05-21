@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{user}}</ion-title>
+    <ion-title>
+      <ion-icon name="contact"></ion-icon>
+      {{user}}
+    </ion-title>
     <ion-buttons end>
       <button ion-button round icon-only color="danger" (click)="logout()">
         <ion-icon name="log-out"></ion-icon>

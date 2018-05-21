@@ -1,8 +1,13 @@
 <form [formGroup]="message" novalidate (submit)="sendMessage()">
   <ion-toolbar>
+    <ion-buttons left>
+      <button type="button" ion-button icon-only color="secondary" (click)="openUploadModal()">
+        <ion-icon name="code-working"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-input type="text" formControlName="text"></ion-input>
-    <ion-buttons end>
-      <button ion-button round icon-only color="primary" [disabled]="!isReadyToSend">
+    <ion-buttons right>
+      <button ion-button icon-only color="success" [disabled]="!isReadyToSend">
         <ion-icon name="send"></ion-icon>
       </button>
     </ion-buttons>

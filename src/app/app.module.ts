@@ -21,6 +21,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FbProvider } from '../providers/fb/fb';
+import { RoomMessageUploadComponent } from '../components/room-message-upload/room-message-upload';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FbProvider } from '../providers/fb/fb';
     CssPage,
     TabsPage,
     RoomMessagesComponent,
-    RoomMessageComponent
+    RoomMessageComponent,
+    RoomMessageUploadComponent
   ],
   providers: [
     StatusBar,

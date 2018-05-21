@@ -1,10 +1,19 @@
 <ion-list>
-  <ion-item *ngFor="let m of messages">
-    <h3 ion-text color="secondary">{{m.user}}</h3>
-    <h2>{{m.text}}</h2>
-    <ion-note item-end>
-      <ion-icon name="time" small></ion-icon>
-      {{m.timestamp | date:"HH:mm a"}}
-    </ion-note>
-  </ion-item>
+  <ion-card *ngFor="let m of messages">
+    <ion-item>
+      <h2 ion-text color="secondary">{{m.user}}</h2>
+      <p item-end>
+        <ion-icon name="time" small></ion-icon>
+        {{m.timestamp | date:"HH:mm a 'de' dd/MM"}}
+      </p>
+    </ion-item>
+    <ion-card-content>
+      <p>{{m.text}}</p>
+    </ion-card-content>
+    <img [src]="m.image" *ngIf="m.image">
+    <ion-card-content *ngIf="m.code">
+      <ion-note>Código:</ion-note>
+      <small><pre>{{m.code}}</pre></small>
+    </ion-card-content>
+  </ion-card>
 </ion-list>
